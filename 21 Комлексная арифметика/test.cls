@@ -46,7 +46,7 @@
 \RequirePackage{mathtext}
 \RequirePackage{indentfirst}
 \RequirePackage{amsmath, amssymb, amsfonts, amsthm}
-\RequirePackage{mathtools}
+\RequirePackage{mathtools, mathabx}
 \RequirePackage{epstopdf}
 \RequirePackage{graphicx}
 \RequirePackage{forloop}
@@ -75,6 +75,7 @@
 \renewcommand{\le}{\leqslant}
 \renewcommand{\ge}{\geqslant}
 \renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -108,7 +109,7 @@
 \newtheorem*{definition}{Определение}
 \newtheorem{note}{Замечание}
 \newtheorem*{note*}{Замечание}
-\newtheoremstyle{problem}{\topsep}{}{\normalfont}{}{\bfseries}{.}{ }{\thmname{#1}\thmnumber{ #2#3}}
+\newtheoremstyle{problem}{\topsep}{}{\normalfont}{}{\bfseries}{.}{ }{\thmname{#1}\thmnumber{ #2}\textit{#3}}
 \theoremstyle{problem}
 \newtheorem{example}{Пример}
 \newtheorem*{example*}{Пример}
