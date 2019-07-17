@@ -144,7 +144,7 @@
 \AddEnumerateCounter{\Asbuk}{\@Asbuk}{Ы}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{ы}
 \setlist[itemize]{nolistsep}
-\setlist[enumerate]{nolistsep, label = \asbuk*)}
+\setlist[enumerate]{nolistsep, label = \textbf{\asbuk*.}}
 \endinput
 %%
 %% End of file `test.cls'.
