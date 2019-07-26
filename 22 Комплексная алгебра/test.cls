@@ -144,7 +144,15 @@
 \AddEnumerateCounter{\Asbuk}{\@Asbuk}{Ы}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{ы}
 \setlist[itemize]{nolistsep}
-\setlist[enumerate]{nolistsep, label = \asbuk*)}
+\setlist[enumerate]{nolistsep, label = \textbf{\asbuk*.}}
+\newenvironment{multienum}[1]
+{
+\begin{enumerate}
+\begin{multicols}{#1}
+}{
+\end{multicols}
+\end{enumerate}
+}
 \endinput
 %%
 %% End of file `test.cls'.
