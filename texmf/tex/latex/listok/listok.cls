@@ -109,7 +109,7 @@
 \newtheorem*{definition}{Определение}
 \newtheorem{note}{Замечание}
 \newtheorem*{note*}{Замечание}
-\newtheoremstyle{problem}{\topsep}{}{\normalfont}{}{\bfseries}{.}{ }{\thmname{#1}\thmnumber{ #2}\textit{#3}}
+\newtheoremstyle{problem}{\parsep}{0pt}{\normalfont}{}{\bfseries}{.}{ }{\thmname{#1}\thmnumber{ #2}\textit{#3}}
 \theoremstyle{problem}
 \newtheorem{example}{Пример}
 \newtheorem*{example*}{Пример}
