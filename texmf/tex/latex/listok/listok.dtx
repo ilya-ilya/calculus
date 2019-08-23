@@ -45,6 +45,7 @@
 \usepackage{multirow}
 \usepackage{amsmath, amssymb, amsfonts, amsthm}
 \usepackage{microtype}
+\usepackage[inline]{enumitem}
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
@@ -213,7 +214,7 @@
 % Далее идут подключённые пакеты
 %    \begin{macrocode}
 \RequirePackage[russian]{babel}
-\RequirePackage{enumitem}
+\RequirePackage[inline]{enumitem}
 \RequirePackage{textcomp, multicol}
 \RequirePackage{mathtext}
 \RequirePackage{indentfirst}
@@ -362,7 +363,6 @@
 \newtheorem{corollary}{Следствие}
 \newtheorem*{corollary*}{Следствие}
 \theoremstyle{definition}
-\newtheorem*{definition}{Определение}
 \newtheorem{note}{Замечание}
 \newtheorem*{note*}{Замечание}
 %    \end{macrocode}
@@ -380,6 +380,7 @@
 \newtheorem*{example*}{Пример}
 \newtheorem{problem}{Задача}
 \newtheorem*{problem*}{Задача}
+\newtheorem*{definition}{Определение}
 \renewcommand \theproblem {%
 %<listok>	\listok@num.\@arabic\c@problem
 %<common&!listok>\@arabic\c@problem
@@ -458,20 +459,61 @@
 }
 %</listok|test>
 %    \end{macrocode}
-% Нумерация пунктов по умолчанию кириллическими полужирными буквами с точкой (ie \textbf{а.}, \textbf{б.}, \textbf{в.})
+% \AddEnumerateCounter{\Asbuk}{\@Asbuk}{Ы}
+% \AddEnumerateCounter{\asbuk}{\@asbuk}{ы}
+% \setlist[itemize]{nosep, nolistsep}
+% \newlist{probenum}{enumerate}{1}
+% \newlist{probparts}{enumerate*}{1}
+% \setlist[enumerate]{nosep, nolistsep}
+% \setlist[probenum]{nosep, nolistsep, label = \textbf{\asbuk*.}}
+% \setlist[probparts]{nosep, nolistsep, label = \textbf{(\asbuk*)}}
+% |enumitem| позволяет делать свои списки.
+% Поэтому есть следующие списки:
+% \begin{description}[nolistsep, nosep]
+% 	\item{|enumerate|} Каждый пункт на новой строке, делает так:
+% 	\begin{enumerate*}
+%  		\item,
+%  		\item,
+%  		\item, \dots
+% 	\end{enumerate*}
+% 	\item{|itemize|} Каждый пункт на новой строке, делает так:
+% 	\begin{itemize*}
+% 		\item,
+% 		\item,
+% 		\item, \dots
+% 	\end{itemize*}
+% 	\item{|enumerate*|, |itemize*|} Тоже, что и двое выше, inline версия (все пункты в одну строчку)
+% 	\item{|probenum|} Каждый пункт на новой строке, делает так:
+% 	\begin{probparts}[label = \textbf{\asbuk*.}]
+% 		\item,
+% 		\item,
+% 		\item, \dots
+% 	\end{probparts}
+% 	\item{|probparts|} Inline версия |probenum|, но делает так:
+%	\begin{probparts}
+%		\item,
+%		\item,
+%		\item, \dots
+%	\end{probparts}
+%	\item{|multienum|} Есть один аргумент. Разбивает |probenum| на переданное число столбцов.
+% \end{description}
 %    \begin{macrocode}
 %<*common>
 \AddEnumerateCounter{\Asbuk}{\@Asbuk}{Ы}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{ы}
-\setlist[itemize]{nolistsep}
-\setlist[enumerate]{nolistsep, label = \textbf{\asbuk*.}}
+\setlist[itemize]{nosep, nolistsep}
+\newlist{probenum}{enumerate}{1}
+\newlist{probparts}{enumerate*}{1}
+\setlist[enumerate]{nosep, nolistsep}
+\setlist[probenum]{nosep, nolistsep, label = \textbf{\asbuk*.}}
+\setlist[probparts]{nosep, nolistsep, label = \textbf{(\asbuk*)}}
 \newenvironment{multienum}[1]
 {
-	\begin{enumerate}
+	\begin{probenum}
 	\begin{multicols}{#1}
 }{
 	\end{multicols}
-	\end{enumerate}
+	\end{probenum}
 }
 \endinput
 %</common>
