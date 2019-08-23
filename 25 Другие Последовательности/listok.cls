@@ -41,7 +41,7 @@
 \input{pdf.clo}
 \fi
 \RequirePackage[russian]{babel}
-\RequirePackage{enumitem}
+\RequirePackage[inline]{enumitem}
 \RequirePackage{textcomp, multicol}
 \RequirePackage{mathtext}
 \RequirePackage{indentfirst}
@@ -106,15 +106,15 @@
 \newtheorem{corollary}{Следствие}
 \newtheorem*{corollary*}{Следствие}
 \theoremstyle{definition}
-\newtheorem*{definition}{Определение}
 \newtheorem{note}{Замечание}
 \newtheorem*{note*}{Замечание}
-\newtheoremstyle{problem}{\parsep}{0pt}{\normalfont}{}{\bfseries}{.}{ }{\thmname{#1}\thmnumber{ #2}\textit{#3}}
+\newtheoremstyle{problem}{0pt}{0pt}{\normalfont}{}{\bfseries}{.}{ }{\thmname{#1}\thmnumber{ #2}\textit{#3}}
 \theoremstyle{problem}
 \newtheorem{example}{Пример}
 \newtheorem*{example*}{Пример}
 \newtheorem{problem}{Задача}
 \newtheorem*{problem*}{Задача}
+\newtheorem*{definition}{Определение}
 \renewcommand \theproblem {%
  \listok@num.\@arabic\c@problem
 }
@@ -146,15 +146,19 @@
 }
 \AddEnumerateCounter{\Asbuk}{\@Asbuk}{Ы}
 \AddEnumerateCounter{\asbuk}{\@asbuk}{ы}
-\setlist[itemize]{nolistsep}
-\setlist[enumerate]{nolistsep, label = \textbf{\asbuk*.}}
+\setlist[itemize]{nosep, nolistsep}
+\newlist{probenum}{enumerate}{1}
+\newlist{probparts}{enumerate*}{1}
+\setlist[enumerate]{nosep, nolistsep}
+\setlist[probenum]{nosep, nolistsep, label = \textbf{\asbuk*.}}
+\setlist[probparts]{nosep, nolistsep, label = \textbf{(\asbuk*)}}
 \newenvironment{multienum}[1]
 {
-\begin{enumerate}
+\begin{probenum}
 \begin{multicols}{#1}
 }{
 \end{multicols}
-\end{enumerate}
+\end{probenum}
 }
 \endinput
 %%
