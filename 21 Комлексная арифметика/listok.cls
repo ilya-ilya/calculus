@@ -150,7 +150,7 @@
 \newlist{probenum}{enumerate}{1}
 \newlist{probparts}{enumerate*}{1}
 \setlist[enumerate]{nosep, nolistsep}
-\setlist[probenum]{nosep, nolistsep, label = \textbf{\asbuk*.}}
+\setlist[probenum]{nosep, nolistsep, label = \textbf{(\asbuk*)}}
 \setlist[probparts]{nosep, nolistsep, label = \textbf{(\asbuk*)}}
 \newenvironment{multienum}[1]
 {
