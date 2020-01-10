@@ -1,0 +1,114 @@
+\documentclass[a4paper, 12pt, num=28]{listok}
+\usepackage{bm}
+%\usepackage{scalerel}
+%\usepackage{tikz}
+%\usepackage{epigraph}
+%\usepackage{multicol}
+%\usetikzlibrary{matrix}
+%\usetikzlibrary{calc}
+%\usetikzlibrary{arrows}
+
+\DeclareMathOperator{\id}{id}
+
+%\newcommand*{\hm}[1]{#1\nobreak\discretionary{}{\hbox{$\mathsurround=0pt #1$}}{}} %перед знаком для его дублирования при переносе формулы
+
+\begin{document}
+\title{Топология прямой: Начало}
+\maketitle{}
+\begin{problem}[ (лемма о вложенных отрезках)]\label{subsec}
+	Имеется последовательность отрезков, каждый из которых содержится в предыдущем.
+	Может ли пересечение всех этих отрезков быть пустым?
+\end{problem}
+\begin{problem}
+	Изменится ли ответ, если отрезки заменить интервалами?
+\end{problem}
+\begin{problem}
+	Группа естествоиспытателей в течении 6 часов наблюдала за (неравномерно) ползущей улиткой так,
+	что она всё это время была под присмотром.
+	Каждый наблюдатель следил за улиткой ровно 1 час без перерывов и зафиксировал, что она проползла за этот
+	час ровно 1 метр. Могла ли улитка за время всего эксперимента проползти
+	\begin{probparts}
+		\item 5м?
+		\item 10м?
+		\item 12м?
+	\end{probparts}
+\end{problem}
+\begin{problem}[ (лемма о конечном покрытии)]\label{coversec}
+	Докажите, что в любом покрытии отрезка интервалами найдётся конечный набор интервалов, покрывающий весь отрезок\footnote{%
+		Подсказка: воспользуйтесь леммой о вложенных отрезках.
+	}.
+\end{problem}
+\begin{problem}
+	Из любого ли покрытия отрезка интервалами можно удалить часть так, чтобы оставшиеся интервалы тоже составляли покрытие,
+	но каждую точку накрывало бы не более двух из них?
+\end{problem}
+\begin{problem}
+	Изменится ли что-нибудь в предыдущих двух задачах, если отрезок заменить интервалом?
+\end{problem}
+\begin{problem}
+	Всегда ли из покрытия отрезка 
+	\begin{probparts}
+		\item конечным;
+		\item любым множеством
+	\end{probparts}
+	содержащихся внутри него отрезков можно выкинуть часть отрезков так,
+	чтобы оставшиеся по-прежнему покрывали исходный отрезок и их суммарная длина не превышала бы его удвоенной длины?
+\end{problem}
+\begin{definition}
+	Для любого положительного числа $\epsilon$ будем называть \textit{$\epsilon$-окрестностью} точки $x_0 \in \R$ интервал
+	$
+		D_{\epsilon}(x_0) \coloneq \left ( x_0 - \epsilon, x_0 + \epsilon \right )
+		= \left \{ x \in \R \mid |x - x_0| < \epsilon \right \}
+	$
+	длины $2 \epsilon$ с центром в $x_0$.
+\end{definition}
+\begin{definition}
+	Точка $a \in \R$ называется \textit{внутренней точкой} множества $M \subset \R$,
+	если у неё есть $\epsilon$-окрестность, целиком содержащаяся в $M$.
+\end{definition}
+\begin{definition}
+	Множество называется \textit{открытым}, если все его точки --- внутренние.
+	Иначе говоря, $U \subset \R$ открыто, если
+	$\forall{u \in U} \exists{\epsilon > 0} D_{\epsilon}(u) \subset U$.
+	Пустое множество тоже, по определению, считается открытым.
+\end{definition}
+\begin{problem}
+	Убедитесь, что промежутки
+	\begin{probparts}
+		\item $(-\infty, a)$;
+		\item $(a, +\infty)$;
+		\item $(a, b)$;
+	\end{probparts}
+	открыты.
+\end{problem}
+\begin{problem}
+	Можно ли разбить интервал в объединение двух непересекающихся открытых множеств?
+\end{problem}
+\begin{problem}
+	Докажите, что объединение любого набора открытых множеств открыто.
+\end{problem}
+\begin{problem}
+	\begin{probparts}
+		\item Докажите, что пересечение конечного набора открытых множеств открыто.
+		\item Так ли это для пересечений бесконечных наборов?
+	\end{probparts}
+\end{problem}
+\begin{problem}
+	Докажите, что всякое открытое множество на прямой представляет собой объединение конечного или счётного набора попарно непересекающихся интервалов,
+	в числе которых допускаются и неограниченные интервалы типа $(-\infty, a)$, $(a, +\infty)$ и $(-\infty, +\infty)$.
+\end{problem}
+\begin{definition}
+	Точка $a \in M \subset \R$ называется \textit{изолированной точкой} множества $M$,
+	если некоторая её $\epsilon$-окрестность не содержит никаких других точек из $M$.
+\end{definition}
+\begin{definition}
+	Множество, все точки которого изолированы, называется \textit{дискретным}.
+\end{definition}
+\begin{problem}
+	Может ли бесконечное дискретное множество быть
+	\begin{probparts}
+		\item ограниченным?
+		\item несчётным?
+	\end{probparts}
+\end{problem}
+\end{document}
