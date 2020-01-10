@@ -1,0 +1,103 @@
+\documentclass[a4paper, 12pt, num=26]{listok}
+\usepackage{bm}
+%\usepackage{scalerel}
+%\usepackage{tikz}
+%\usepackage{epigraph}
+%\usepackage{multicol}
+%\usetikzlibrary{matrix}
+%\usetikzlibrary{calc}
+%\usetikzlibrary{arrows}
+
+\DeclareMathOperator{\id}{id}
+
+%\newcommand*{\hm}[1]{#1\nobreak\discretionary{}{\hbox{$\mathsurround=0pt #1$}}{}} %перед знаком для его дублирования при переносе формулы
+
+\begin{document}
+\title{Бесконечно малые последовательности}
+\maketitle{}
+\begin{definition}
+	Последовательность $\{\alpha_n\}$ называется \textit{бесконечно малой}, если для произвольного положительного числа $\epsilon$
+	найдется такое натуральное число $N$, что при любом натуральном $n > N$ будет верно неравенство $|\alpha_n| < \epsilon$.
+\end{definition}
+\begin{center}
+	\textit{В задачах ниже при доказательстве надо явно указывать сколемовскую функцию.}
+\end{center}
+\begin{problem}
+	Запишите в кванторах определение бесконечно малой последовательности и последовательности, не являющейся бесконечно малой.
+	Запишите их так, чтобы кванторы существования шли в начале формулы.
+\end{problem}
+\begin{problem}
+	Для последовательности $\{\alpha_n\}$ укажите какой-нибудь номер $N$, начиная с которого для всех членов последовательности верно неравенство
+	$|\alpha_n| < \epsilon$, если
+	\begin{multienum}{3}
+		\item $\alpha_n = \cfrac1n$;
+		\item $\alpha_n = \cfrac{{(-1)}^n \cos n}{n^3}$;
+		\item $\alpha_n = {0{,}99}^n$;
+		\item $\alpha_n = \cfrac{2^n}{n!}$;
+		\item $\alpha_n = \cfrac{2n+3}{n^2+2n-1}$;
+		\item $\alpha_n = \sqrt{n + 1} - \sqrt n$.
+	\end{multienum}
+\end{problem}
+\begin{problem}
+	Верно ли, что
+	\begin{probparts}
+		\item сумма;
+		\item разность;
+		\item произведение;
+		\item отношение
+	\end{probparts}
+	бесконечно малых последовательностей также является бесконечно малой последовательностью.
+\end{problem}
+\begin{problem}
+	Пусть последовательности $\{\alpha_n\}$ и $\{\beta_n\}$ являются бесконечно малыми,
+	а последовательность $\{\gamma_n\}$ такова, что $\alpha_n \le \gamma_n \le \beta_n$.
+	Докажите, что тогда последовательность $\{\gamma_n\}$ также является бесконечно малой.
+\end{problem}
+\begin{problem}
+	Верно ли, что последовательность $\{\alpha_n\}$ с отличными от нуля членами является бесконечно малой тогда и только тогда,
+	когда последовательность $\{\frac1{\alpha_n}\}$ является бесконечно большой?
+\end{problem}
+\begin{problem}
+\begin{probparts}
+	\item Верно ли, что последовательность $\{\alpha_n\}$ положительными членами является бесконечно малой тогда и только тогда,
+	когда последовательность $\{\alpha_n^2\}$ является бесконечно малой?
+	\item Верно ли аналогичное утверждение для последовательностей $\{\alpha_n\}$ и $\{\sqrt[3]{\alpha_n}\}$?
+\end{probparts}
+\end{problem}
+\begin{problem}
+	Последовательности $\{\alpha_n\}$ и $\{\beta_n\}$ бесконечно малые, а последовательность $\{\gamma_n\}$ такова,
+	что $\gamma_{2n-1} = \alpha_n$, $\gamma_{2n} = \beta_n$ при любом натуральном $n$.
+	Является ли последовательность $\{\gamma_n\}$ бесконечно малой?
+\end{problem}
+\begin{problem}
+	Одна последовательность бесконечно малая, а другая ограниченная.
+	Что можно сказать о
+	\begin{probparts}
+		\item сумме;
+		\item произведении;
+		\item отношении
+	\end{probparts}
+	этих последовательностей?
+\end{problem}
+\begin{problem}
+	Решите предыдущую задачу в случае, если одна из последовательностей бесконечно малая, а другая бесконечно большая.
+\end{problem}
+\begin{problem}
+	Докажите, пользуясь предыдущими задачами, что следующие последовательности являются бесконечно малыми:
+	\begin{multienum}{4}
+		\item $\cfrac{n^5 + 3}{n^{10}}$;
+		\item $\cfrac{3n^6 + 2n^4 - n}{n^9 + 7n^5 - 5n^2 - 2}$;
+		\item $\sqrt{\cfrac{|\sin{3n} + \cos{7n}|}{2n^2 + 3n}}$;
+		\item $\cfrac{3^n + 4^n}{2^n + 5^n}$;
+	\end{multienum}
+\end{problem}
+\begin{problem}
+	Любую ли последовательность можно представить в виде отношения двух бесконечно малых последовательностей?
+\end{problem}
+\begin{problem}
+	По последовательности $\{\alpha_n\}$ построили последовательность $\{\beta_n\}$ так, что 
+	$\beta_n = \alpha_{n + 1} - \frac{\alpha_n}2$ при любом натурального $n$.
+	Докажите, что если последовательность $\{\beta_n\}$ оказалась бесконечно малой,
+	то и последовательность $\{\alpha_n\}$ также является бесконечно малой.
+\end{problem}
+\end{document}
