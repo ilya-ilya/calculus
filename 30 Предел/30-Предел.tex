@@ -1,0 +1,116 @@
+\documentclass[a4paper, 12pt, num=30]{listok}
+\usepackage{bm}
+%\usepackage{scalerel}
+%\usepackage{tikz}
+\usepackage{epigraph}
+%\usepackage{multicol}
+%\usetikzlibrary{matrix}
+%\usetikzlibrary{calc}
+%\usetikzlibrary{arrows}
+
+\DeclareMathOperator{\id}{id}
+
+%\newcommand*{\hm}[1]{#1\nobreak\discretionary{}{\hbox{$\mathsurround=0pt #1$}}{}} %перед знаком для его дублирования при переносе формулы
+
+\begin{document}
+\title{Предел}
+\maketitle{}
+
+\epigraph{%
+    Бесконечность --- не предел!
+}{%
+    Buzz Lightyear, space ranger
+}
+\begin{problem}
+    Привидите пример последовательности, которая имеет
+    \begin{probparts}
+        \item ноль;
+        \item одну;
+        \item две;
+        \item $N$, для некоторого фиксированного $N \in \N$;
+        \item счётно
+    \end{probparts}
+    предельных точек.
+\end{problem}
+\begin{definition}
+    Последовательность $a_n$ называется \textit{сходящейся}, если она имеет одну предельную точку $A$, которая называтся пределом.
+    Обозначение: $A = \lim\limits_{n \to +\infty} a_n$ или $a_n \to A$ при $n \to +\infty$.
+
+    Последовательности, которые не являющиеся сходяящимися называют \textit{расходящимися}.
+\end{definition}
+\begin{problem}
+    Докажите, что $A = \lim\limits_{n \to +\infty} a_n$ тогда и только тогда, когда существует $\alpha_n$ --- бесконечно малая такая, что $a_n = A + \alpha_n$.
+\end{problem}
+\begin{problem}
+    Докажите, что $A = \lim\limits_{n \to +\infty} a_n$ тогда и только тогда, когда существует окрестноть $A$ такая, что в ней находятся все члены $a_n$ начиная с некоторого.
+\end{problem}
+\begin{problem}
+    Докажите, что $A$ --- предельная точка последовательности $a_n$ тогда и только тогда, когда существует подпоследовательность $a_{n_k} \to A$ при $n_k \to +\infty$.
+\end{problem}
+\begin{definition}
+    Последовательность $a_n$ называется \textit{фундаментальной}, если $\forall{\epsilon > 0}\exists{N \in \N}\forall{n, m > N} |a_n - a_m| < \epsilon$.
+\end{definition}
+\begin{problem}[(Критерий Коши)]
+    Докажите, что $a \colon \N \to \R$ сходится если и только если является фундамаентальной.
+\end{problem}
+\begin{problem}
+    Привидите пример фундаментальной расходщейся $a \colon \N \to \Q$.
+\end{problem}
+\begin{problem}[(Теорема Больцано--Вейерштрасса)]
+    Докажите, что в $\R$ сходится любая ограниченная монотонная последовательность.
+\end{problem}
+\begin{problem}
+    \begin{probparts}
+        \item Докажите, что всякая сходящаяся ограничена.
+        \item Привидите пример ограниченной расходящейся последовательности.
+    \end{probparts}
+\end{problem}
+\begin{problem}
+    Пусть $A$ --- предел последовательности $\{a_n\}$.
+    \begin{probparts}
+        \item Верно ли, что если $A > 0$, то начиная с некоторого все члены $\{a_n\}$ положительны?
+        \item Докажите, что если в $\{a_n\}$ бесконечно много положительных и отрицательных членов, то $A = 0$.
+    \end{probparts}
+\end{problem}
+\begin{problem}
+    Последовательности $\{a_n\}$ и $\{b_n\}$ имеют пределы $A$ и $B$ соответственно.
+    Докажите, что тогда
+    \begin{probenum}
+        \item $\lim\limits_{n \to +\infty} (a_n \pm b_n) = A \pm B$;
+        \item $\lim\limits_{n \to +\infty} (a_n  b_n) = A B$;
+        \item если $B ̸\ne 0$ и все элементы последовательности $\{b_n\}$ отличны от нуля, то
+            $\lim\limits_{n \to +\infty} \frac{a_n}{b_n} = \frac AB$.
+    \end{probenum}
+\end{problem}
+\begin{definition}
+    Говорят, что почти все члены последовательности удовлетворяют некоторому условию,
+    если существует лишь конечное число членов последовательности, не удовлетворяющих этому условию.
+\end{definition}
+\begin{problem}
+    Пусть последовательности $\{a_n\}$ и $\{b_n\}$ сходятся.
+    Докажите, что если почти для всех $n \in \N$ выполняется условие
+    \begin{probparts}
+        \item $a_n = b_n$, то $\lim\limits_{n \to +\infty} a_n = \lim\limits_{n \to +\infty} b_n$
+        \item $a_n \ge b_n$, то $\lim\limits_{n \to +\infty} a_n \ge \lim\limits_{n \to +\infty} b_n$
+        \item Останется ли верным последнее утверждение, если в нем все знаки нестрогого неравенства заменить на знаки строгого неравенства?
+    \end{probparts}
+\end{problem}
+\begin{problem}[(Лемма о двух милиционерах)]
+    Пусть последовательности $\{a_n\}$, $\{b_n\}$, $\{c_n\}$ таковы, что почти для всех $n \in \N$ выполнено неравенство
+    $a_n \le b_n \le c_n$ и $\lim\limits_{n\to+\infty} a_n = \lim\limits_{n\to+\infty} b_n = A$.
+    Докажите, что тогда $\lim\limits_{n\to+\infty} c_n = A$.
+\end{problem}
+\begin{problem}
+\begin{probparts}
+    \item Алиса записала определение последовательности, имеющей предел, следующим образом:
+        <<$
+            \exists{N}\forall{\epsilon > 0}\forall{n > N} |a_n - A| < \epsilon.
+        $>>
+        Опишите множество последовательностей, которые задает данное определение.
+    \item Выполните это же задание для определения Боба:
+        <<$
+            \exists{\epsilon > 0} \forall N \forall{n > N} |a_n - A| < \epsilon.
+        $>>
+\end{probparts}
+\end{problem}
+\end{document}
