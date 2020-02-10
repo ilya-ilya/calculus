@@ -1,5 +1,5 @@
 #!/bin/sh
-for list in *\ *
+for list 
 do
     yes r | lualatex --output-directory=/home/ilya/179/calculus/bin/calculus/ "$list"/*.tex
 done
