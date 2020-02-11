@@ -96,6 +96,8 @@
 \newcommand*{\existsone}[1]{\existssym! #1~\;~}
 \let\forallsym\forall
 \renewcommand*{\forall}[1]{\forallsym #1~\;~}
+\newcommand{\closure}[2][3]{%
+{}\mkern#1mu\overline{\mkern-#1mu#2}}
 \renewenvironment{abstract}{\quotation\itshape\centering}{\endquotation}
 \newtheorem{theorem}{Теорема}
 \newtheorem*{theorem*}{Теорема}
@@ -155,7 +157,7 @@
 \newlist{probenum}{enumerate}{1}
 \newlist{probparts}{enumerate*}{1}
 \setlist[enumerate]{nosep, nolistsep}
-\setlist[probenum]{nosep, nolistsep, label = \textbf{\asbuk*.}}
+\setlist[probenum]{nosep, nolistsep, label = \textbf{(\asbuk*)}}
 \setlist[probparts]{nosep, nolistsep, label = \textbf{(\asbuk*)}}
 \newenvironment{multienum}[1]
 {

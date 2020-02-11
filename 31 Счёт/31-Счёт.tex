@@ -149,7 +149,7 @@
     Найдите пределы
     \begin{probparts}
         \item $\lim\limits_{n \to + \infty} {\left ( 1 + \frac 1n \right )}^{3n}$;
-        \item $\lim\limits_{n \to + \infty} {\left ( 1 + \frac 3n \right )}^{3n}$;
+        \item $\lim\limits_{n \to + \infty} {\left ( 1 + \frac 3n \right )}^{n}$;
         \item $\lim\limits_{n \to + \infty} {\left ( 1 - \frac 1n \right )}^{n}$.
     \end{probparts}
 \end{problem}
@@ -159,5 +159,25 @@
         \item ${\left ( \frac n e \right )}^n < n! < e {\left ( \frac n2 \right )}^n$;
         \item $\forall{\alpha \in \R} e^\alpha > 1 + \alpha$.
     \end{probparts}
+\end{problem}
+\theme{Простые предельные теоремы}
+\begin{problem}[(Теорема Бернулли)]
+    Пусть $A_{m, n, p}$ --- событие, что среди $n$ испытаний Бернулли с вероятностью успеха $p$ ровно $m$ закончились успешно.
+    Докажите, что для любого $\epsilon > 0$ существует предел
+    \[
+        \lim_{n \to + \infty} \Prob{A_{m, n, p} \mid |\frac mn - p| < \epsilon} = 1.
+    \]
+\end{problem}
+\begin{problem}[(Закон Больших Чисел)]
+    Пусть $X_1, \dots, X_n, \dots$ --- последовательность попарно независимых случайных величин,
+    для всех $i$ $\Expect{X_i^2}$ --- конечно, $m = \Expect{X_i}$, $\sigma^2 = \Expect{X_i^2} - {(\Expect{X_i})}^2$.
+    Рассмотрим \textit{выборочное среднее}:
+    \[
+        {\closure{X}}^{(n)} = \frac 1n \sum_{i = 1}^n X_i.
+    \]
+    Докажите, что для любого $\epsilon > 0$ существует предел
+    \[
+        \lim_{n \to +\infty} \Prob{|{\closure{X}}^{(n)} - m| \ge 0} = 0.
+    \]
 \end{problem}
 \end{document}
