@@ -1,0 +1,115 @@
+\documentclass[a4paper, 12pt, num=32, date=]{listok}
+\usepackage{bm}
+\usepackage{halloweenmath}
+%\usepackage{scalerel}
+%\usepackage{tikz}
+%\usepackage{epigraph}
+%\usepackage{multicol}
+%\usetikzlibrary{matrix}
+%\usetikzlibrary{calc}
+%\usetikzlibrary{arrows}
+
+\DeclareMathOperator{\id}{id}
+
+%\newcommand*{\hm}(1]{#1\nobreak\discretionary{}{\hbox{$\mathsurround=0pt #1$}}{}} %перед знаком для его дублирования при переносе формулы
+
+\begin{document}
+\title{Предел функции}
+\maketitle{}
+
+
+\begin{definition}[(по Коши)]
+Пусть функция $f(x)$ определена на множестве $X \subset \mathbb{R}$, $a$~---~предельная точка множества $X$. Говорят, что $f(x)$ имеет предел при $x$, стремящемся к $a$, если для всякого $\epsilon > 0$ найдется такое число $\delta > 0$, что для любого $x \in X$, лежащего в проколотой $\delta$-окрестности точки $a$, $f(x)$ лежит в $\epsilon$-окрестности точки $A$.
+
+Обозначения: $\displaystyle A = \lim_{x \to a} f(x)$ или $f(x) \to A$ при $x \to a$.
+\end{definition}
+
+
+\begin{problem}
+    Может ли у функции быть два предела в одной точке?
+\end{problem}
+
+
+\begin{problem}
+    Найдите пределы (с явным отысканием $\delta$ по $\epsilon$):
+    \begin{probparts}
+        \item $\displaystyle \lim_{x \to 5} 3x$;
+        \item $\displaystyle \lim_{x \to 3} \sqrt{x - 2}$;
+        \item $\displaystyle \lim_{x \to 1} \{x\}$;
+        \item $\displaystyle \lim_{x \to 0} \frac{\sqrt{1 + x} - 1}{x}$;
+        \item $\displaystyle \lim_{x \to 1} \frac{x^n - 1}{x - 1}$;
+        \item $\displaystyle \lim_{x \to 0} x \sin \frac{1}{x}$.
+    \end{probparts}
+\end{problem}
+
+\begin{problem}
+    Пусть существуют пределы $\displaystyle A = \lim_{x \to a} f(x)$ и $\displaystyle A = \lim_{x \to a} g(x)$. Сформулируйте и докажите теоремы о пределах $x \to a$ функций
+    \begin{probparts}
+        \item $cf(x)$;
+        \item $f(x) + g(x)$;
+        \item $f(x) \cdot g(x)$;
+        \item $f(x) / g(x)$.
+    \end{probparts}
+\end{problem}
+
+
+
+\begin{problem}
+Найдите $\displaystyle \lim _{x \rightarrow \infty} \frac{a_{n} x^{n}+\ldots+a_{1} x+a_{0}}{b_{m} x^{m}+\ldots+b_{1} x+b_{0}}$.
+
+\end{problem}
+
+\begin{problem}
+    Сформулируйте и докажите аналог теоремы о двух милиционерах для функции.
+\end{problem}
+
+\begin{problem}[(Предел сложной функции)]
+\begin{probparts}
+    \item Пусть функции $f$ и $g$ определены на $\mathbb{R}$, причем $\displaystyle \lim_{x \to a} f(x) = b$ и $\displaystyle \lim_{y \to b} g(y) = c$. Пусть также $\forall x \ne a$ верно, что $f(x) \ne b$.
+    \item Докажите, что $\displaystyle \lim_{x \to a} g(f(x)) = c$. Зачем нужно второе условие?
+\end{probparts}
+\end{problem}
+
+
+\begin{problem}[(Первый замечательный предел)]
+\begin{probparts}
+    \item Докажите, что $\sin x < x < \tg x$  при $ x \in\left(0 ; \frac{\pi}{2}\right)$
+    \item Докажите, что $\displaystyle \lim_{x \to 0} \frac{\sin x}{x} = 1$.
+\end{probparts}
+\end{problem}
+
+\begin{problem}[(Второй замечательный предел)]
+    Докажите, что $\displaystyle \lim_{x \to \infty} \left(1 + \frac{1}{x} \right)^x = e$.
+\end{problem}
+
+
+\begin{definition}[(по Гейне)] Пусть функция $f(x)$ определена на множестве $X \subset \mathbb{R}$. Пусть $а$ --- действительное число (принадлежащее М или нет). Говорят, что $f(x)$ имеет предел $A$ при $x$, стремящемся к $a$, если для каждой сходящейся к $a$ последовательности $\{x_n\}$, все элементы которой отличны от $a$ и принадлежат $X$, справедливо равенство $\displaystyle \lim{n \to \infty} f(x_n) = A$.
+\end{definition}
+
+
+\begin{problem}
+    Докажите эквивалентность определений по Коши и по Гейне.
+\end{problem}
+
+
+
+\begin{problem}
+    Приведите пример функции, определенной на $\mathbb{R}$, не равной тождественно нулю ни на каком интервале, но имеющей в каждой точке нулевой предел.
+\end{problem}
+
+
+\begin{problem}
+\begin{probparts}
+    \item Приведите пример функции, определенной на $\mathbb{Q}$,
+        имеющей в каждой действительной точке бесконечный предел.
+    \item Существует ли функция, определенная на $\mathbb{R}$, имеющая в каждой действительной точке бесконечный предел?
+\end{probparts}
+\end{problem}
+
+
+
+
+
+
+
+\end{document}
